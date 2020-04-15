@@ -31,8 +31,8 @@
 
 
         if (isset($_POST['delete'])) {
-            $indexToBeRemoved = $_POST['delete'];
-            array_splice($friendsArray, $indexToBeRemoved, 1);
+            $RemInd = $_POST['delete'];
+            array_splice($friendsArray, $RemInd, 1);
         }
 
 
@@ -41,9 +41,10 @@
             fwrite($fileOut, "$name\n");
         }
         fclose($fileOut);
-
-
+        
         $nameFilter = "";
+        
+        
         $startingWith = false;
         if(isset($_POST["nameFilter"])){
             $nameFilter = $_POST["nameFilter"];
